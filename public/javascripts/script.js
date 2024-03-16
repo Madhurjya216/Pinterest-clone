@@ -13,15 +13,7 @@ function main() {
   });
 }
 
-// function searchFunc(){
-//   document.querySelector('#search-bar').addEventListener('input', function(dets){
-//     console.log(dets.target.value);
-//     const filteredImages = 
-//   })
-// }
-
 main();
-// searchFunc();
   
   
 
