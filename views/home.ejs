@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="/stylesheets/home.css" />
+    <script src="https://kit.fontawesome.com/3f167df4c7.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="profile">
+      <nav>
+        <img
+          id="pin-logo"
+          src="https://cdn-icons-png.flaticon.com/128/220/220214.png"
+          alt="logo"
+        />
+        <ul>
+          <li><a href="/home">Home</a></li>
+          <li><a href="/explore">Explore</a></li>
+          <li><a href="/create">Create</a></li>
+        </ul>
+        
+        <div>
+          <a href="/profile">
+            <img
+              id="user-logo"
+              src="https://cdn-icons-png.flaticon.com/128/1077/1077114.png"
+              alt=""
+            />
+          </a>
+        </div>
+      </nav>
+
+      <div class="main-content"> 
+        <% if(posts.length > 0) { %>
+          <% posts.forEach((post, index) => { %>
+            <div class="content">
+              <img id="main_imgs" src="/uploads/<%= post.image %>" alt="<%= post.title %>" title="<%= post.title %>" />
+            </div>
+          <% }); %>
+        <% } else { %>
+          <div id="else">
+            <h1>Don't have anything right now!</h1>
+          </div>
+        <% } %>
+      </div>
+    </div>
+  </body>
+</html>

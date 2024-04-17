@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/create.css" />
+    <script
+      src="https://kit.fontawesome.com/3f167df4c7.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <nav>
+      <img
+        id="pin-logo"
+        src="https://cdn-icons-png.flaticon.com/128/220/220214.png"
+        alt="logo"
+      />
+      <ul>
+        <li><a href="/home">Home</a></li>
+        <li><a href="/explore">Explore</a></li>
+        <li><a href="/create">Create</a></li>
+      </ul>
+      <div>
+        <a href="/profile">
+          <img
+            id="user-logo"
+            src="https://cdn-icons-png.flaticon.com/128/1077/1077114.png"
+            alt=""
+          />
+        </a>
+      </div>
+    </nav>
+
+    <div class="createPost-container">
+      <form
+        id="create-form"
+        action="/createPost"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <div>
+          <div class="inputt">
+            <input type="file" name="newPost" id="postFile" />
+            <div class="upload_file">
+              <p style="padding-bottom: 20px; font-size: 30px">
+                <i class="fa-solid fa-arrow-up-from-bracket"></i>
+              </p>
+              <p>Choose your file that you want to Post</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="input">
+            <input
+              type="text"
+              name="link"
+              placeholder="OR Upload links"
+              id=""
+            />
+          </div>
+          <div class="input">
+            <input type="text" name="title" placeholder="Title" id="" />
+          </div>
+          <div class="input">
+            <input type="text" name="category" placeholder="Category" id="" />
+          </div>
+          <div class="input btn">
+            <input type="submit" value="Submit" id="post-btn" />
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      function createFile() {
+        const form = document.querySelector(".inputt input");
+        document
+          .querySelector(".upload_file")
+          .addEventListener("click", function () {
+            form.click();
+          });
+      }
+      createFile();
+    </script>
+  </body>
+</html>

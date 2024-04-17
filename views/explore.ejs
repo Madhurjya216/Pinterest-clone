@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/explore.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="explore-main">
+      <nav>
+        <img
+          id="pin-logo" 
+          src="https://cdn-icons-png.flaticon.com/128/220/220214.png"
+          alt="logo"
+        />
+        <ul>
+          <li><a href="/home">Home</a></li>
+          <li><a href="/explore">Explore</a></li>
+          <li><a href="/create">Create</a></li>
+        </ul>
+        <div>
+          <a href="/profile">
+            <img
+              id="user-logo"
+              src="https://cdn-icons-png.flaticon.com/128/1077/1077114.png"
+              alt=""
+            />
+          </a>
+        </div>
+      </nav>
+      <div class="heading">
+        <h1>Stay Inspired</h1>
+      </div>
+      <div class="explore-container">
+        <% if (PostCategory.length > 0) { %> <% PostCategory.forEach(category =>
+        { %>
+        <a href="/explore/category/<%= category %>">
+          <div class="explore-content">
+            <!-- You can customize the image source based on the category -->
+            <img
+              id="category_img"
+              src="https://images.unsplash.com/photo-1534531688091-a458257992cb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fHBob3RvJTIwYWxidW18ZW58MHx8MHx8fDA%3D"
+              alt="<%= category %>"
+            />
+            <span id="category_title"><%= category %></span>
+          </div>
+        </a>
+        <% }) %> <% } else { %>
+        <p>No categories found!</p>
+        <% } %>
+      </div>
+    </div>
+  </body>
+</html>

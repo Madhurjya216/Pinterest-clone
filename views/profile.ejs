@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/profile.css" />
+    <script
+      src="https://kit.fontawesome.com/3f167df4c7.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <nav>
+      <img
+        id="pin-logo"
+        src="https://cdn-icons-png.flaticon.com/128/220/220214.png"
+        alt="logo"
+      />
+      <ul>
+        <li><a href="/home">Home</a></li>
+        <li><a href="/explore">Explore</a></li>
+        <li><a href="/create">Create</a></li>
+      </ul>
+      <div>
+        <a href="/profile">
+          <img
+            id="user-logo"
+            src="https://cdn-icons-png.flaticon.com/128/1077/1077114.png"
+            alt=""
+          />
+        </a>
+      </div>
+    </nav>
+
+    <div class="profile-main">
+      <div class="pro-content">
+        <form action="/profilePic" method="post" enctype="multipart/form-data">
+          <input type="file" name="profile-Pic" id="profile-Pic" />
+          <input type="submit" value="fileSubmit" />
+        </form>
+        <div class="pin-relative">
+          <div class="proimg-div">
+            <img
+              id="profile-img"
+              src="/uploads/<%= user.profileImg ? user.profileImg : 'user.1709472964180-profile.png' %>"
+              alt="profile img"
+            />
+            <button id="pin-btn">
+              <i class="fa-solid fa-pen-to-square"></i>
+            </button>
+          </div>
+        </div>
+        <p><%= user.fullname %></p>
+        <p id="pin-username">
+          <span
+            ><i class="fa-brands fa-pinterest"></i><%= user.username %></span
+          >
+        </p>
+        <div>
+          <p id="logout"><a href="/logout">Logout</a></p>
+          <p id="save-btn"><a href="/save">Save</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- made  changes -->
+    <div class="profile-uploader-heading">
+      <h1>Your Uploads</h1>
+    </div>
+    <div class="profile-uploader">
+      <% if (user.posts.length > 0) { %> <% user.posts.forEach(post => { %>
+      <div class="profile-images">
+        <img src="/uploads/<%= post.image %>" alt="post.title" />
+      </div>
+      <% }); %> <% } else { %>
+      <p>No records found!</p>
+      <% } %>
+    </div>
+
+    <script>
+      function toggleForm() {
+        const form = document.querySelector(".pro-content form input");
+        document
+          .querySelector("#pin-btn")
+          .addEventListener("click", function () {
+            form.click();
+            document.querySelector(".pro-content form").style.display = "block";
+            if (form.onsubmit()) {
+              document.querySelector(".pro-content form").style.display =
+                "none";
+            }
+          });
+      }
+      toggleForm();
+    </script>
+  </body>
+</html>
