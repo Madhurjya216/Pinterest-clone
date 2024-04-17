@@ -1,4 +1,4 @@
-require('dotenv').config();
+require("dotenv").config();
 var createError = require("http-errors");
 var express = require("express");
 var path = require("path");
@@ -6,23 +6,24 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 const expressSession = require("express-session");
 const passport = require("passport");
-// =
+
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 
-var app = express(); 
+var app = express();
 
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 // view engine setup
-app.set("views", path.join(__dirname, "views")); 
+app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
-app.use(expressSession({
+app.use(
+  expressSession({
     resave: false,
-    saveUninitialized: false, 
+    saveUninitialized: false,
     secret: "process.env.MY_SECREAT_KEY",
-  }) 
+  })
 );
 app.use(passport.initialize());
 app.use(passport.session());
