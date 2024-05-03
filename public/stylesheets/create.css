@@ -20,7 +20,7 @@ nav {
   width: 100%;
   background: white;
   z-index: 999;
-  box-shadow: .5px .5px 10px 1px black;
+  box-shadow: 0.5px 0.5px 10px 1px black;
 }
 
 nav ul {
@@ -160,7 +160,6 @@ form {
   display: none;
 }
 
-
 /* media queries */
 @media (max-width: 1060px) {
   .content img {
@@ -175,7 +174,7 @@ form {
   }
 
   .upload_file p {
-    font-size: 15px;;
+    font-size: 15px;
   }
 
   .input {
@@ -185,7 +184,7 @@ form {
   }
 }
 
-@media (max-width: 830px){
+@media (max-width: 830px) {
   .createPost-container #create-form {
     flex-direction: column;
     /* padding: 0 200px;  */
@@ -206,13 +205,13 @@ form {
     width: 40px;
   }
 
-  nav #pin-logo{
+  nav #pin-logo {
     width: 40px;
   }
 
-  nav ul li{
+  nav ul li {
     font-size: 14px;
-    padding: 0 8px;  
+    padding: 0 8px;
   }
 }
 
@@ -226,14 +225,14 @@ form {
     width: 35px;
   }
 
-  nav #pin-logo{
+  nav #pin-logo {
     width: 35px;
     padding: 0 3px;
   }
 
-  nav ul li{
+  nav ul li {
     font-size: 13px;
-    padding: 0 0px;  
+    padding: 0 0px;
   }
 
   .upload_file {
@@ -243,7 +242,7 @@ form {
   }
 
   .upload_file p {
-    font-size: 13px;;
+    font-size: 13px;
   }
 
   .input {
@@ -259,7 +258,7 @@ form {
     margin: 5px;
   }
 
-  nav{
+  nav {
     padding: 0 10px;
   }
 }
